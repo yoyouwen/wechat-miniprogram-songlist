@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="toolbar">
+    <t-button theme="primary" size="small" shape="round" bindtap="createGroup">新建分组</t-button>
+    <t-button variant="outline" size="small" shape="round" bindtap="refresh">刷新</t-button>
+  </view>
+
+  <view class="tip" wx:if="{{!cloudReady}}">
+    云未初始化，请检查 app.js 的 wx.cloud.init。
+  </view>
+
+  <view class="card">
+    <view class="header-row">
+      <view class="th col-name">分组名</view>
+      <view class="th col-actions right">操作</view>
+    </view>
+    <t-divider />
+
+    <block wx:if="{{errMsg}}">
+      <view class="error">加载失败：{{errMsg}}</view>
+    </block>
+
+    <block wx:elif="{{groups.length}}">
+      <block wx:for="{{groups}}" wx:key="_id">
+        <view class="row">
+          <view class="td col-name">
+            <text class="gname">{{item.name}}</text>
+            <text class="tag" wx:if="{{item.name === curGroup}}">当前</text>
+          </view>
+          <view class="td col-actions">
+            <t-button size="small" shape="round" bindtap="switchGroup" data-name="{{item.name}}">切换</t-button>
+            <t-button size="small" shape="round" theme="danger" variant="outline"
+                      bindtap="deleteGroup" data-id="{{item._id}}" data-name="{{item.name}}">删除</t-button>
+          </view>
+        </view>
+        <t-divider />
+      </block>
+    </block>
+
+    <view class="empty" wx:else>暂无分组，请先点击“新建分组”</view>
+  </view>
+</view>

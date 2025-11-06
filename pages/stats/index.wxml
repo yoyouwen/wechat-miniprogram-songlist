@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="summary-card">
+    <view class="line"><text class="label">分组</text><text class="value">{{groupId || '未设置'}}</text></view>
+    <view class="line"><text class="label">总歌曲数</text><text class="value">{{total}}</text></view>
+    <view class="line"><text class="label">舞者人数</text><text class="value">{{dancerCount}}</text></view>
+  </view>
+
+  <t-divider content="按舞者统计" />
+
+  <block wx:if="{{rows.length}}">
+    <view class="list">
+      <block wx:for="{{rows}}" wx:key="name">
+        <view class="item">
+          <view class="left">
+            <view class="dot" style="background: {{item.color}};"></view>
+            <text class="name">{{item.name}}</text>
+          </view>
+          <view class="right">
+            <text class="count">{{item.count}}</text>
+            <view class="bar" style="background: {{item.color}};"></view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="empty">暂无数据</view>
+  </block>
+</view>

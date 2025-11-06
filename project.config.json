@@ -1,0 +1,11 @@
+{
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "appid": "wxfd2601bd6bab84b9",
+  "projectname": "share-movable-list",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true
+  }
+}

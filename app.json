@@ -1,0 +1,11 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/stats/index",
+    "pages/groups/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "歌单"
+  }
+}

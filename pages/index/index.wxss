@@ -1,0 +1,49 @@
+.container { padding: 12px; }
+.toolbar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.group-tip { color:#64748b; font-size:12px; margin:0 0 8px 2px; }
+
+.card {
+  background:#fff; border-radius:16rpx; padding:12px;
+  box-shadow:0 6rpx 24rpx rgba(0,0,0,0.06);
+}
+
+.header-row, .row { display:flex; gap:8px; align-items:center; }
+.th { font-weight:600; color:#2f3a58; font-size:14px; }
+.right { text-align:right; }
+
+.col-title  { flex: 1.6 1 0; min-width: 0; }
+.col-artist { flex: 1.1 1 0; min-width: 0; }
+.col-dancer { flex: 1.1 1 0; min-width: 0; }
+.col-actions { margin-left:auto; flex:0 0 auto; display:flex; gap:6px; justify-content:flex-end; align-items:center; }
+
+.cell-input {
+  width:100%; box-sizing:border-box;
+  font-size:14px; height:40px; line-height:38px; padding:0 12px;
+  border:1px solid #e6e8ef; border-radius:10px; background:#f8f9fb;
+}
+.cell-input:focus { border-color:#165dff; background:#fff; }
+
+.row { position:relative; padding:8px 0 8px 12px; }
+.row-hover { background:#fafcff; }
+
+.colorbar { position:absolute; left:0; top:4px; bottom:4px; width:6px; border-radius:6px; }
+.colorbar.mini { width:3px; top:2px; bottom:2px; }
+
+.subrow {
+  position:relative; padding: 4px 0 8px 12px;
+  display:flex; gap:12px; align-items:center;
+}
+.subcell { display:flex; gap:8px; align-items:center; }
+.subcell.time { width: 150px; }
+.subcell.link { flex:1 1 0; min-width:0; }
+.label { color:#7a8499; font-size:12px; }
+.time-pill {
+  padding:0 10px; height:32px; line-height:32px;
+  border:1px solid #e6e8ef; border-radius:8px; background:#f8f9fb; font-size:14px;
+}
+
+.hint { color:#8a90a0; font-size:12px; margin-top:10px; }
+
+/* 圆形按钮里的字符居中 */
+t-button[shape="circle"][size="small"] { line-height: 1; }
+t-button[shape="circle"][size="small"] .t-button__text { font-size:14px; }

@@ -1,0 +1,93 @@
+<view class="container">
+  <!-- 工具栏 -->
+  <view class="container">
+  <!-- 工具栏 -->
+  <view class="toolbar">
+    <t-button theme="primary" size="small" bindtap="addRow" shape="round">新增一行</t-button>
+    <t-button variant="outline" size="small" bindtap="goGroups" shape="round">分组管理</t-button>
+    <t-button variant="outline" size="small" bindtap="goStats" shape="round">统计</t-button>
+  </view>
+
+  <!-- 当前分组提示 -->
+  <view class="group-tip" wx:if="{{groupId}}">
+    当前分组：{{groupId}}
+  </view>
+
+  <!-- 其余内容保持不变 -->
+  <!-- ... 下方表头/数据块 与你现有版本一致 ... -->
+</view>
+
+
+  <!-- 表头 -->
+  <view class="card">
+    <view class="header-row">
+      <view class="th col-title">歌名</view>
+      <view class="th col-artist">歌手</view>
+      <view class="th col-dancer">舞者</view>
+      <view class="th col-actions right">操作</view>
+    </view>
+    <t-divider />
+
+    <!-- 数据块 -->
+    <block wx:for="{{list}}" wx:key="_id">
+      <!-- 第一行 -->
+      <view class="row" hover-class="row-hover">
+        <view class="colorbar" style="background: {{item._color}};"></view>
+
+        <view class="td col-title">
+          <input class="cell-input" placeholder="歌名"
+                 value="{{item.title ? item.title : ''}}"
+                 data-index="{{index}}" data-field="title"
+                 bindinput="onEdit" confirm-type="done" />
+        </view>
+
+        <view class="td col-artist">
+          <input class="cell-input" placeholder="歌手"
+                 value="{{item.artist ? item.artist : ''}}"
+                 data-index="{{index}}" data-field="artist"
+                 bindinput="onEdit" confirm-type="done" />
+        </view>
+
+        <view class="td col-dancer">
+          <input class="cell-input" placeholder="舞者"
+                 value="{{item.dancer ? item.dancer : ''}}"
+                 data-index="{{index}}" data-field="dancer"
+                 bindinput="onEdit" confirm-type="done" />
+        </view>
+
+        <view class="td col-actions">
+          <t-button shape="circle" size="small" variant="outline" bindtap="moveUp" data-index="{{index}}">↑</t-button>
+          <t-button shape="circle" size="small" variant="outline" bindtap="moveDown" data-index="{{index}}">↓</t-button>
+          <t-button shape="circle" size="small" theme="danger" variant="outline" bindtap="removeRow" data-index="{{index}}">删</t-button>
+        </view>
+      </view>
+
+      <!-- 第二行：时间 + 链接 -->
+      <view class="subrow">
+        <view class="colorbar mini" style="background: {{item._color}};"></view>
+
+        <view class="subcell time">
+          <text class="label">时间</text>
+          <picker mode="time"
+                  value="{{item.time ? item.time : '00:00'}}"
+                  data-index="{{index}}"
+                  bindchange="onTimeChange">
+            <view class="time-pill">{{ item.time ? item.time : '00:00' }}</view>
+          </picker>
+        </view>
+
+        <view class="subcell link">
+          <text class="label">链接</text>
+          <input class="cell-input" placeholder="link"
+                 value="{{item.link ? item.link : ''}}"
+                 data-index="{{index}}" data-field="link"
+                 bindinput="onEdit" confirm-type="done" />
+        </view>
+      </view>
+
+      <t-divider />
+    </block>
+  </view>
+
+  <view class="hint" wx:if="{{!groupId}}">未设置分组，请点击「切换分组」设置（如老师名）。</view>
+</view>

@@ -1,0 +1,25 @@
+.container { padding: 12px; }
+.toolbar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+
+.tip { color:#ef4444; font-size:12px; margin: 4px 2px 8px; }
+
+.card {
+  background:#fff; border-radius:16rpx; padding:12px;
+  box-shadow:0 6rpx 24rpx rgba(0,0,0,0.06);
+}
+
+.header-row, .row { display:flex; gap:8px; align-items:center; }
+.th { font-weight:600; color:#2f3a58; font-size:14px; }
+.right { text-align:right; }
+
+.col-name { flex: 1 1 0; min-width:0; }
+.col-actions { margin-left:auto; flex:0 0 auto; display:flex; gap:6px; align-items:center; }
+
+.gname { color:#2f3a58; font-size:15px; }
+.tag {
+  margin-left:8px; padding:2px 8px; border-radius:999px;
+  background:#eef2f7; color:#2f3a58; font-size:12px;
+}
+
+.error { color:#ef4444; font-size:13px; margin: 6px 2px; }
+.empty { color:#8a90a0; text-align:center; padding:24px 0; }

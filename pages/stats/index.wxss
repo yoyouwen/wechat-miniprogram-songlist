@@ -1,0 +1,29 @@
+.container { padding: 12px; }
+
+.summary-card {
+  background:#fff; border-radius:16rpx; padding:12px;
+  box-shadow:0 6rpx 24rpx rgba(0,0,0,0.06); margin-bottom:12px;
+}
+.line { display:flex; justify-content:space-between; padding:6px 0; }
+.label { color:#7a8499; font-size:14px; }
+.value { font-weight:600; color:#2f3a58; }
+
+.list {
+  background:#fff; border-radius:16rpx; padding:6px 8px;
+  box-shadow:0 6rpx 24rpx rgba(0,0,0,0.06);
+}
+.item {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 4px; border-bottom:1px solid #f0f2f5;
+}
+.item:last-child { border-bottom:none; }
+
+.left { display:flex; align-items:center; gap:8px; min-width:0; }
+.dot { width:10px; height:10px; border-radius:50%; }
+.name { color:#2f3a58; font-size:15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+.right { display:flex; align-items:center; gap:8px; }
+.count { font-weight:600; color:#2f3a58; }
+.bar   { width: 36px; height:6px; border-radius:6px; opacity:.8; }
+
+.empty { color:#8a90a0; text-align:center; padding:32px 0; }
